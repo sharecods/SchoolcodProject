@@ -22,6 +22,34 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },
+  {
+    path: '/login/findid',
+    name: 'FindId',
+    components: {
+      default: FindId
+    }
+  },
+  {
+    path: '/login/findpw',
+    name: 'FindPw',
+    component: FindPw,
+    props: true
+  },
+  {
+    path: '/login/showid',
+    name: 'ShowId',
+    components: {
+      default: ShowId
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/login/havepw',
+    name: 'HavePw',
+    component: HavePw
   }
 ];
 
