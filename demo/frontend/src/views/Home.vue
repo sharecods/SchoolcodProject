@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <my-list :mainboard="mainboard"/>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import MyList from '@/components/MyList.vue'
+import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld
+    MyList
+  },
+  computed: {
+    ...mapState(['mainboard'])
+  },
+  data: () => ({
+  }),
+  methods: {
+    ...mapActions(['mainBoarder'])
+  },
+  mounted () {
+    this.mainBoarder()
   }
-};
+}
 </script>
+
+<style>
+</style>
